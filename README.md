@@ -15,12 +15,12 @@ See [`contributing.md`]() for ways to get started.
 Please adhere to this project's [`code of conduct`]().
 
 ## Project Tech Stack
-[Next13] (https://beta.nextjs.org/docs)
-[Tailwind](https://tailwindcss.com/)
-[Prisma](https://www.prisma.io/)
-[NextAuth](https://next-auth.js.org/)
-[PostgreSQL](https://www.postgresql.org/) - [Railway Container](https://railway.app/)
-[Typescript](https://www.typescriptlang.org/)
+[Next13](https://beta.nextjs.org/docs) <br/>
+[Tailwind](https://tailwindcss.com/) <br/>
+[Prisma](https://www.prisma.io/) <br/>
+[NextAuth](https://next-auth.js.org/) <br/>
+[PostgreSQL](https://www.postgresql.org/) - [Railway Container](https://railway.app/) <br/>
+[Typescript](https://www.typescriptlang.org/) <br/>
 
 
 ## Design Driven Development
