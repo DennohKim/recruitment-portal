@@ -1,17 +1,17 @@
 # How to contribute
 
-Please note we have a [code of conduct](https://github.com/reactdeveloperske/reactdevske-website/blob/main/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
+Please note we have a [code of conduct](https://github.com/DennohKim/recruitment-portal/blob/main/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
 ## Contributing procedure
 
 ### Submit an issue
 
-- Create a [new issue](https://github.com/reactdeveloperske/reactdevske-website/issues)
+- Create a [new issue](https://github.com/DennohKim/recruitment-portal/issues)
 - Comment on the issue (if you'd like to be assigned to it) - that way the issue can be assigned to you.
 
 ### Open issues
 
-- Go to [open issues](https://github.com/reactdeveloperske/reactdevske-website/issues)
+- Go to [open issues](https://github.com/DennohKim/recruitment-portal/issues)
 - select an issue of your choice that is `open` or `need help` or is `up-for-grabs` and is not assigned.
 - Comment on the issue (if you'd like to be assigned to it) - that way the issue can be assigned to you.
 
@@ -35,7 +35,7 @@ If you're ready to contribute and create your PR, it will help to set up a local
 If this is your first time forking our repo, this is all you need to do for this step:
 
 ```
-$ git clone git@github.com:[your_github_handle]/reactdevske-website.git && cd reactdevske-website
+$ git clone git@github.com:[your_github_handle]/recruitment-portal.gitt && cd recruitment-portal
 ```
 
 Make sure you checkout the `develop` branch `git checkout develop`
@@ -45,7 +45,7 @@ If you've already forked the repo, you'll want to ensure your fork is configured
 To [configure your fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork):
 
 ```
-$ git remote add upstream https://github.com/reactdeveloperske/reactdevske-website.git
+$ git remote add upstream https://github.com/DennohKim/recruitment-portal.git
 ```
 
 To [sync your fork with the latest changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork):
@@ -110,6 +110,6 @@ $ git push
 
 ### Submit your Pull Request (PR)🚀
 
-- After your changes are commited to your GitHub fork, submit a pull request (PR) to the `develop` branch of the `reactdeveloperske/reactdevske-website` repo
+- After your changes are commited to your GitHub fork, submit a pull request (PR) to the `develop` branch of the `https://github.com/DennohKim/recruitment-portal` repo
 - In your PR description, reference the issue it resolves (see [linking a pull request to an issue using a keyword](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword))
   - ex. `Updates out of date content [Fixes #1234]`
