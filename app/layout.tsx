@@ -1,4 +1,9 @@
+import Navbar from './auth/Navbar'
 import './globals.css'
+
+import { Outfit } from "@next/font/google";
+
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export default function RootLayout({
   children,
@@ -12,9 +17,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        
-        {children}</body>
+      <body className={`${outfit.variable} font-sans`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
