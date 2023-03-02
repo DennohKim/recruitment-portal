@@ -26,7 +26,7 @@ export default async function Navbar() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link href="/me"></Link>
+            
             {!session?.user && <Login />}
            {session?.user && <SignOut name={session.user?.name || ""} email={session.user?.email || ""} image={session.user?.image || ""} />}
           </div>
