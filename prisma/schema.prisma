@@ -93,7 +93,6 @@ model Skill {
 
 model Applicant {
   id   Int    @id @default(autoincrement())
-  name String @unique
   jobs Job[]
   userId           String
   user             User     @relation(fields: [userId], references: [id])
