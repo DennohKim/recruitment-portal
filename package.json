@@ -14,15 +14,19 @@
     "@prisma/client": "^4.10.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "framer-motion": "^10.1.0",
     "next": "13.2.1",
     "next-auth": "^4.19.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "@types/node": "^18.14.2",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.4",
     "prisma": "^4.10.1",
     "tailwindcss": "^3.2.7",
     "ts-node": "^10.9.1",
