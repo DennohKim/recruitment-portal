@@ -1,3 +1,5 @@
+
+
 import React from "react";
 
 export default function PostJobModal() {
@@ -20,7 +22,7 @@ export default function PostJobModal() {
           >
             ✕
           </label>
-          <h3 className="text-2xl font-bold pb-6">Post a job</h3>
+          <h3 className="pb-6 text-2xl font-bold">Post a job</h3>
           <form>
             <div className="space-y-4">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
@@ -160,7 +162,12 @@ export default function PostJobModal() {
                 </div>
                 <div></div>
                 <div>
-                  <button className="btn-wide btn bg-[#FA510F] text-white border-none">Post Job</button>
+                  <button
+                    type="submit"
+                    className="btn-wide btn border-none bg-[#FA510F] text-white"
+                  >
+                    Post Job
+                  </button>
                 </div>
               </div>
             </div>
@@ -170,7 +177,6 @@ export default function PostJobModal() {
     </>
   );
 }
-
 
 /*
 

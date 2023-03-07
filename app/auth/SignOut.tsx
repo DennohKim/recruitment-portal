@@ -12,24 +12,25 @@ export default function SignOut({name, image}: User){
     return (
       <>
         <Link href="/profile" className="flex items-center space-x-4">
-          <div className="flex items-center mb-4 space-x-3 mt-4 cursor-pointer">
-            <img className="w-10 h-10 rounded-full" src={image} />
+          <div className="mb-4 mt-4 flex cursor-pointer items-center space-x-3">
+            <img className="h-10 w-10 rounded-full" src={image} />
           </div>
           <div className="space-y-1 font-medium">
-            <p>
-              {name}            
-            </p>
+            <p>{name}</p>
           </div>
         </Link>
-        <PostJobModal/>
 
-        <button
-          onClick={() => signOut()}
-          className="px-3 py-3 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
-        >
-          <i className="text-gray-400 w-5 fa fa-user"></i>
-          <span className="hidden lg:inline ml-1 uppercase font-normal">Sign out</span>
-        </button>
+        <div className="space-y-4 md:space-y-0 md:space-x-4">
+          <PostJobModal />
+
+          <button
+            onClick={() => signOut()}
+            className="inline-block rounded-md border border-gray-200 bg-white px-3 py-3 text-center text-gray-700 shadow-sm hover:border-gray-300 hover:bg-gray-100"
+          >
+            <i className="fa fa-user w-5 text-gray-400"></i>
+            <span className=" inline font-normal uppercase">Sign out</span>
+          </button>
+        </div>
       </>
     );
 }
