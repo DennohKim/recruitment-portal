@@ -7,7 +7,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="relative mx-auto flex w-full max-w-[1440px]">
+    <div className="relative mx-auto  flex w-full max-w-[1440px]">
       <div className="mx-auto grid h-[600px] w-10/12 grid-cols-1 space-y-4 space-x-4 overflow-hidden md:grid-cols-2">
         <div className="item-center ss:mt-8 flex flex-col justify-center space-y-8 md:mt-0 ">
           <h1 className="text-secondary-color text-5xl font-bold leading-[4rem]">

@@ -23,18 +23,16 @@ export default function Images() {
               <Image
                 src={logoTransistor}
                 alt="Transistor"
-                layout="fixed"
                 unoptimized
               />
             </li>
             <li className="flex">
-              <Image src={logoTuple} alt="Tuple" layout="fixed" unoptimized />
+              <Image src={logoTuple} alt="Tuple" unoptimized />
             </li>
             <li className="flex">
               <Image
                 src={logoStaticKit}
                 alt="StaticKit"
-                layout="fixed"
                 unoptimized
               />
             </li>
@@ -43,13 +41,12 @@ export default function Images() {
         <li>
           <ul className="flex flex-col items-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-12">
             <li className="flex">
-              <Image src={logoMirage} alt="Mirage" layout="fixed" unoptimized />
+              <Image src={logoMirage} alt="Mirage" unoptimized />
             </li>
             <li className="flex">
               <Image
                 src={logoLaravel}
                 alt="Laravel"
-                layout="fixed"
                 unoptimized
               />
             </li>
@@ -57,7 +54,6 @@ export default function Images() {
               <Image
                 src={logoStatamic}
                 alt="Statamic"
-                layout="fixed"
                 unoptimized
               />
             </li>

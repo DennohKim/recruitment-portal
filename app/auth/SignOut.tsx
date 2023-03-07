@@ -1,14 +1,14 @@
 "use client";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import PostJobModal from "../components/PostJobModal";
 
 type User = {
   name: string;
-  email: string;
   image: string;
 }
 
-export default function SignOut({name, email, image}: User){
+export default function SignOut({name, image}: User){
     return (
       <>
         <Link href="/profile" className="flex items-center space-x-4">
@@ -17,20 +17,18 @@ export default function SignOut({name, email, image}: User){
           </div>
           <div className="space-y-1 font-medium">
             <p>
-              {name}
-              <time className="block text-sm text-gray-500 dark:text-gray-400">
-                {email}
-              </time>
+              {name}            
             </p>
           </div>
         </Link>
+        <PostJobModal/>
 
         <button
           onClick={() => signOut()}
-          className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
+          className="px-3 py-3 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
         >
           <i className="text-gray-400 w-5 fa fa-user"></i>
-          <span className="hidden lg:inline ml-1">Sign out</span>
+          <span className="hidden lg:inline ml-1 uppercase font-normal">Sign out</span>
         </button>
       </>
     );
