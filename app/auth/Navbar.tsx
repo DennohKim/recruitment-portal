@@ -35,9 +35,9 @@ export default async function Navbar() {
             )}
           </div>
           <div className="flex items-center md:hidden">
+         
             <Button session={session} />
           </div>
-         
         </div>
       </div>
     </header>

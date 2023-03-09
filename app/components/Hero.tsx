@@ -26,7 +26,6 @@ const Hero = async () => {
                 type="text"
                 placeholder="Search"
               />
-
               <button className="z-10 rounded-md bg-[#FA510F] px-8 text-white">
                 Search
               </button>
