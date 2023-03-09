@@ -1,7 +1,7 @@
 "use client";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
-import PostJobModal from "../components/PostJobModal";
+// import PostJobModal from "../components/PostJobModal";
 
 type User = {
   name: string;
@@ -21,7 +21,7 @@ export default function SignOut({name, image}: User){
         </Link>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <PostJobModal />
+          
 
           <button
             onClick={() => signOut()}
