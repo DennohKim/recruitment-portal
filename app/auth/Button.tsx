@@ -19,7 +19,7 @@ export default function Button({session}: any) {
         className="relative  flex w-full min-w-[300px] justify-center"
         style={showMenu ? { display: "block" } : { display: "none" }}
       >
-        <div className="absolute mt-10 flex-col rounded-md bg-gray-200/95 z-50 px-10 space-y-4 py-10 w-full">
+        <div className="absolute z-50 mt-14 w-full flex-col space-y-4 rounded-md bg-white border shadow-sm px-10 py-10">
           <nav className="flex flex-col space-y-4">
             <Link href="/">Home</Link>
             <Link href="/jobs">Jobs</Link>
@@ -36,18 +36,29 @@ export default function Button({session}: any) {
           </div>
         </div>
       </div>
-      <button
-        onClick={toggleMenu}
-        className="flex items-center rounded border border-gray-600 px-3 py-2 text-gray-500 hover:border-black hover:text-black"
-      >
-        <svg
-          className="h-3 w-3 fill-current"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 3h20v2H0zm0 6h20v2H0zm0 6h20v2H0z" />
-        </svg>
-      </button>
+      <div className="">
+        <label className="swap-rotate swap border-2 border-gray-800 px-2 py-1 rounded-md">
+          <input type="checkbox" onClick={toggleMenu} />
+          <svg
+            className="swap-on fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 512 512"
+          >
+            <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+          </svg>
+          <svg
+            className="swap-off fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 512 512"
+          >
+            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+          </svg>
+        </label>
+      </div>
     </div>
   );
 }
