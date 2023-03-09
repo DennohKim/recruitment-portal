@@ -8,7 +8,7 @@ export default function PostJobModal() {
       {/* The button to open modal */}
       <label
         htmlFor="my-modal-5"
-        className="btn border-none bg-[#FA510F] font-normal text-white"
+        className="btn border-2 border-[#FA510F] hover:border-[#FA510F] hover:text-white hover:bg-[#FA510F] font-normal bg-white text-[#FA510F]"
       >
         Post a Job
       </label>
