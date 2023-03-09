@@ -14,12 +14,12 @@ export default function Button({session}: any) {
       
      };
   return (
-    <div className="flex">
+    <div className="flex z-100">
       <div
         className="relative  flex w-full min-w-[300px] justify-center"
         style={showMenu ? { display: "block" } : { display: "none" }}
       >
-        <div className="absolute z-50 mt-14 w-full flex-col space-y-4 rounded-md bg-white border shadow-sm px-10 py-10">
+        <div className="absolute z-10 mt-14 w-full flex-col space-y-4 rounded-md bg-white border shadow-sm px-10 py-10">
           <nav className="flex flex-col space-y-4">
             <Link href="/">Home</Link>
             <Link href="/jobs">Jobs</Link>

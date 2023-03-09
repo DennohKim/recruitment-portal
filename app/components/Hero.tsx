@@ -24,7 +24,7 @@ const Hero = () => {
               placeholder="Search"
             />
 
-            <button className="z-10 rounded-md bg-[#FA510F] px-8 text-white">
+            <button className="rounded-md bg-[#FA510F] px-8 text-white">
               Search
             </button>
           </form>
