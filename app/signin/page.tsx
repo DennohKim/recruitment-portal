@@ -14,29 +14,39 @@ export default function SignIn() {
     signIn("github", { callbackUrl: "http://localhost:3000" });
   }
   return (
-    <>
-      <div className="">
-        <button type="button" onClick={handleGoogleSignin} className="">
-          Sign In with Google{" "}
-          <Image
-            src={"/assets/google.svg"}
-            width="20"
-            height={20}
-            alt="google logo"
-          />
-        </button>
+    
+      <div className="flex  flex-col items-center justify-center space-y-4 min-h-[600px]">
+        <div className="">
+          <button
+            type="button"
+            onClick={handleGoogleSignin}
+            className="flex items-center gap-4 rounded-md border border-gray-300 px-4  py-2 text-lg font-medium hover:bg-gray-100 "
+          >
+            <Image
+              src={"/assets/google.svg"}
+              width="20"
+              height={20}
+              alt="google logo"
+            />
+            Sign in with Google{" "}
+          </button>
+        </div>
+        <div className="">
+          <button
+            type="button"
+            onClick={handleGithubSignin}
+            className="flex items-center gap-4 rounded-md border border-gray-300 px-4 py-2 text-lg font-medium hover:bg-gray-100"
+          >
+            <Image
+              src={"/assets/github.svg"}
+              width={25}
+              height={25}
+              alt="Github Logo"
+            />
+            Sign in with Github{" "}
+          </button>
+        </div>
       </div>
-      <div className="">
-        <button type="button" onClick={handleGithubSignin} className="">
-          Sign In with Github{" "}
-          <Image
-            src={"/assets/github.svg"}
-            width={25}
-            height={25}
-            alt="Github Logo"
-          />
-        </button>
-      </div>
-    </>
+    
   );
 }
