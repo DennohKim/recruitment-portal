@@ -70,8 +70,8 @@ model Job {
   job_description  String
   job_type         String
   deadline_date    DateTime
-  responsibilities String[]
-  qualifications   String[]
+  responsibilities String
+  qualifications   String
   tags             Tag[]
   skills           Skill[]
   applicants       Applicant[]
