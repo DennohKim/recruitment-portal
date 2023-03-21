@@ -1,17 +1,80 @@
+"use client"
+import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
-
-
+interface IJob {
+  title: string;
+  company: string;
+  companyLogo: string;
+  jobDescription: string;
+  jobType: string;
+  deadlineDate: string;
+  responsibilities: string;
+  qualifications: string;
+  skills: string;
+  tags: string;
+}
 
 export default function PostJobModal() {
+
+
+const [job, setJob] = useState<IJob>({
+  title: "",
+  company: "",
+  companyLogo: "",
+  jobDescription: "",
+  jobType: "full-time",
+  deadlineDate: "",
+  responsibilities: "",
+  qualifications: "",
+  skills: "",
+  tags: "",
+});
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  const { name, value } = e.target;
+  setJob((prevJob) => ({ ...prevJob, [name]: value }));
+};
+
+const { isLoading, mutate } = useMutation(async (newJob: IJob) => {
+  const res = await axios.post("/api/jobs/addJob", newJob);
+  return res.data;
+});
+
+const submitJob = (e: React.FormEvent) => {
+  e.preventDefault();
+
+const jobItems: IJob = {
+  title: job.title,
+  company: job.company,
+  companyLogo: job.companyLogo,
+  jobDescription: job.jobDescription,
+  jobType: job.jobType,
+  deadlineDate: job.deadlineDate,
+  responsibilities: job.responsibilities,
+  qualifications: job.qualifications,
+  skills: job.skills,
+  tags: job.tags,
+
+}
+  mutate(jobItems);
+};
+
+
+  
   return (
     <>
       {/* The button to open modal */}
       <label
         htmlFor="my-modal-5"
-        className="btn border-2 border-[#FA510F] hover:border-[#FA510F] hover:text-white hover:bg-[#FA510F] font-normal bg-white text-[#FA510F]"
+        className="btn border-2 border-[#FA510F] bg-white font-normal text-[#FA510F] hover:border-[#FA510F] hover:bg-[#FA510F] hover:text-white"
       >
         Post a Job
       </label>
+      
 
       <input type="checkbox" id="my-modal-5" className="modal-toggle" />
       <div className="modal">
@@ -23,7 +86,8 @@ export default function PostJobModal() {
             ✕
           </label>
           <h3 className="pb-6 text-2xl font-bold">Post a job</h3>
-          <form>
+          <form onSubmit={submitJob}>
+            
             <div className="space-y-4">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                 <div>
@@ -32,7 +96,9 @@ export default function PostJobModal() {
                   </label>
                   <input
                     type="text"
-                    placeholder="Type here"
+                    name="title"
+                    onChange={handleChange}
+                    placeholder="Title"
                     className="input-bordered input w-full max-w-xs"
                   />
                 </div>
@@ -42,7 +108,9 @@ export default function PostJobModal() {
                   </label>
                   <input
                     type="text"
-                    placeholder="Type here"
+                    placeholder="Company name"
+                    name="company"
+                    onChange={handleChange}
                     className="input-bordered input w-full max-w-xs"
                   />
                 </div>
@@ -51,8 +119,11 @@ export default function PostJobModal() {
                     <span className="label-text">Company Logo</span>
                   </label>
                   <input
-                    type="file"
-                    className="file-input-bordered file-input w-full max-w-xs"
+                    type="text"
+                    placeholder="Company logo"
+                    name="companyLogo"
+                    onChange={handleChange}
+                    className="input-bordered input w-full max-w-xs"
                   />
                 </div>
               </div>
@@ -62,6 +133,8 @@ export default function PostJobModal() {
                     <span className="label-text">Job Description</span>
                   </label>
                   <textarea
+                    name="jobDescription"
+                    onChange={handleChange}
                     className="textarea-bordered textarea h-24 w-full"
                     placeholder="Bio"
                   ></textarea>
@@ -75,10 +148,12 @@ export default function PostJobModal() {
                   <label className="label">
                     <span className="label-text">Job Type</span>
                   </label>
-                  <select className="select-bordered select w-full">
-                    <option disabled selected>
-                      Pick One
-                    </option>
+                  <select
+                    name="jobType"
+                    onChange={handleChange}
+                    className="select-bordered select w-full"
+                  >
+                    <option selected>Pick One</option>
                     <option>Part Time</option>
                     <option>Full Time</option>
                     <option>Contract</option>
@@ -90,7 +165,8 @@ export default function PostJobModal() {
                   </label>
                   <input
                     type="date"
-                    placeholder="Type here"
+                    name="deadlineDate"
+                    onChange={handleChange}
                     className="input-bordered input w-full max-w-xs"
                   />
                 </div>
@@ -103,6 +179,8 @@ export default function PostJobModal() {
                   <textarea
                     className="textarea-bordered textarea h-24 w-full"
                     placeholder="Responsibilities"
+                    name="responsibilities"
+                    onChange={handleChange}
                   ></textarea>
                   <label className="label">
                     <span className="label-text-alt text-gray-400">
@@ -117,6 +195,8 @@ export default function PostJobModal() {
                   <textarea
                     className="textarea-bordered textarea h-24 w-full"
                     placeholder="Qualifications"
+                    name="qualifications"
+                    onChange={handleChange}
                   ></textarea>
                   <label className="label">
                     <span className="label-text-alt text-gray-400">
@@ -130,9 +210,9 @@ export default function PostJobModal() {
                   </label>
                   <input
                     type="text"
-                    placeholder="Type here"
-                    multiple
-                    name="skills[]"
+                    placeholder="Skills"
+                    name="skills"
+                    onChange={handleChange}
                     className="input-bordered input w-full max-w-xs"
                   />
                   <label className="label">
@@ -149,9 +229,9 @@ export default function PostJobModal() {
                   </label>
                   <input
                     type="text"
-                    placeholder="Type here"
-                    multiple
-                    name="tags[]"
+                    placeholder="Tags"
+                    onChange={handleChange}
+                    name="tags"
                     className="input-bordered input w-full max-w-xs"
                   />
                   <label className="label">
