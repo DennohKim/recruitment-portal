@@ -3,13 +3,16 @@ import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
-interface IJob {
+export interface IJob {
   title: string;
   company: string;
+  location: string;
+  minSalary: number | null;
+  maxSalary: number | null;
   companyLogo: string;
   jobDescription: string;
   jobType: string;
-  deadlineDate: string;
+  deadlineDate: Date | null;
   responsibilities: string;
   qualifications: string;
   skills: string;
@@ -22,10 +25,13 @@ export default function PostJobModal() {
 const [job, setJob] = useState<IJob>({
   title: "",
   company: "",
+  location: "",
+  minSalary: 0,
+  maxSalary: 0,
   companyLogo: "",
   jobDescription: "",
   jobType: "full-time",
-  deadlineDate: "",
+  deadlineDate: new Date(),
   responsibilities: "",
   qualifications: "",
   skills: "",
@@ -50,6 +56,9 @@ const submitJob = (e: React.FormEvent) => {
 const jobItems: IJob = {
   title: job.title,
   company: job.company,
+  location: job.location,
+  minSalary: job.minSalary,
+  maxSalary: job.maxSalary,
   companyLogo: job.companyLogo,
   jobDescription: job.jobDescription,
   jobType: job.jobType,
@@ -58,8 +67,7 @@ const jobItems: IJob = {
   qualifications: job.qualifications,
   skills: job.skills,
   tags: job.tags,
-
-}
+};
   mutate(jobItems);
 };
 
@@ -74,7 +82,6 @@ const jobItems: IJob = {
       >
         Post a Job
       </label>
-      
 
       <input type="checkbox" id="my-modal-5" className="modal-toggle" />
       <div className="modal">
@@ -87,7 +94,6 @@ const jobItems: IJob = {
           </label>
           <h3 className="pb-6 text-2xl font-bold">Post a job</h3>
           <form onSubmit={submitJob}>
-            
             <div className="space-y-4">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                 <div>
@@ -225,6 +231,42 @@ const jobItems: IJob = {
               <div className="grid grid-cols-1 items-end gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                 <div>
                   <label className="label">
+                    <span className="label-text">Minimum Salary</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="20000"
+                    onChange={handleChange}
+                    name="minSalary"
+                    className="input-bordered input w-full max-w-xs"
+                  />
+                </div>
+                <div>
+                  <label className="label">
+                    <span className="label-text">Maximum Salary</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="200000"
+                    onChange={handleChange}
+                    name="maxSalary"
+                    className="input-bordered input w-full max-w-xs"
+                  />
+                </div>
+                <div>
+                  <label className="label">
+                    <span className="label-text">Location</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Company location"
+                    onChange={handleChange}
+                    name="location"
+                    className="input-bordered input w-full max-w-xs"
+                  />
+                </div>
+                <div>
+                  <label className="label">
                     <span className="label-text">Tags</span>
                   </label>
                   <input
@@ -244,7 +286,7 @@ const jobItems: IJob = {
                 <div>
                   <button
                     type="submit"
-                    className="btn-wide btn border-none bg-[#FA510F] text-white"
+                    className="btn-wide btn border-none bg-[#FA510F] flex items-center text-white"
                   >
                     Post Job
                   </button>
@@ -258,6 +300,3 @@ const jobItems: IJob = {
   );
 }
 
-/*
-
-*/
