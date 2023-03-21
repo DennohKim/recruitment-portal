@@ -33,7 +33,7 @@ const [job, setJob] = useState<IJob>({
 });
 
 const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
 ) => {
   const { name, value } = e.target;
   setJob((prevJob) => ({ ...prevJob, [name]: value }));
