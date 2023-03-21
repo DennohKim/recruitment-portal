@@ -7,8 +7,8 @@ export interface IJob {
   title: string;
   company: string;
   location: string;
-  minSalary: number | null;
-  maxSalary: number | null;
+  minSalary: number ;
+  maxSalary: number;
   companyLogo: string;
   jobDescription: string;
   jobType: string;
@@ -42,7 +42,32 @@ const handleChange = (
   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
 ) => {
   const { name, value } = e.target;
-  setJob((prevJob) => ({ ...prevJob, [name]: value }));
+  switch (name) {
+    case "deadlineDate":
+      setJob({
+        ...job,
+        deadlineDate: new Date(value),
+      });
+      break;
+    case "minSalary":
+      setJob({
+        ...job,
+        minSalary: parseInt(value, 10),
+      });
+      break;
+    case "maxSalary":
+      setJob({
+        ...job,
+        maxSalary: parseInt(value, 10),
+      });
+      break;
+    default:
+      setJob({
+        ...job,
+        [name]: value,
+      });
+      break;
+  }
 };
 
 const { isLoading, mutate } = useMutation(async (newJob: IJob) => {
@@ -69,10 +94,24 @@ const jobItems: IJob = {
   tags: job.tags,
 };
   mutate(jobItems);
+  setJob({
+    title: "",
+    company: "",
+    location: "",
+    minSalary: 0,
+    maxSalary: 0,
+    companyLogo: "",
+    jobDescription: "",
+    jobType: "",
+    deadlineDate: new Date(),
+    responsibilities: "",
+    qualifications: "",
+    skills: "",
+    tags: "",
+  });
 };
 
 
-  
   return (
     <>
       {/* The button to open modal */}
