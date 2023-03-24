@@ -12,7 +12,7 @@ export interface IJob {
   companyLogo: string;
   jobDescription: string;
   jobType: string;
-  deadlineDate: Date | null;
+  deadlineDate: Date;
   responsibilities: string;
   qualifications: string;
   skills: string;

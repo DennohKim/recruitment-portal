@@ -5,6 +5,8 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 import prisma from "../../../lib/prismadb"
 
+
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -20,9 +22,9 @@ export default async function handler(
         const job: IJob = req.body;
 
         //Get user
-        const prismaUser = await prisma.user.findUnique({
-          where: { email: session?.user?.email}
-        })
+        const prismaUser: User | null = await prisma.user.findUnique({
+          where: { email: session?.user?.email },
+        });
 
 
         //Create post
@@ -42,8 +44,9 @@ export default async function handler(
               responsibilities: job.responsibilities,
               qualifications: job.qualifications,
             },
-          });         // do something with the new job, e.g. save it to a database
-
+          }); 
+          
+      
            res.status(200).json(result); // send a success response back to the client
          } catch (error) {
            console.log(error);
