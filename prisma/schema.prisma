@@ -67,11 +67,13 @@ model Job {
   company          String
   company_logo     String
   location         String
+  min_salary       Int?
+  max_salary       Int?
   job_description  String
   job_type         String
   deadline_date    DateTime
-  responsibilities String[]
-  qualifications   String[]
+  responsibilities String
+  qualifications   String
   tags             Tag[]
   skills           Skill[]
   applicants       Applicant[]
