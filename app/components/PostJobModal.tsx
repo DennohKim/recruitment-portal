@@ -4,18 +4,18 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 export interface IJob {
-  title: string;
-  company: string;
-  location: string;
-  minSalary: number ;
-  maxSalary: number;
-  companyLogo: string;
-  jobDescription: string;
-  jobType: string;
-  deadlineDate: Date;
-  responsibilities: string;
-  qualifications: string;
-  skills: string;
+  title?: string;
+  company?: string;
+  location?: string;
+  min_salary?: number ;
+  max_salary?: number;
+  company_logo: string;
+  job_description?: string;
+  job_type?: string;
+  deadline_date?: Date;
+  responsibilities?: string;
+  qualifications?: string;
+  skills?: string;
   tags: string;
 }
 
@@ -26,12 +26,12 @@ const [job, setJob] = useState<IJob>({
   title: "",
   company: "",
   location: "",
-  minSalary: 0,
-  maxSalary: 0,
-  companyLogo: "",
-  jobDescription: "",
-  jobType: "full-time",
-  deadlineDate: new Date(),
+  min_salary: 0,
+  max_salary: 0,
+  company_logo: "",
+  job_description: "",
+  job_type: "full-time",
+  deadline_date: new Date(),
   responsibilities: "",
   qualifications: "",
   skills: "",
@@ -46,19 +46,19 @@ const handleChange = (
     case "deadlineDate":
       setJob({
         ...job,
-        deadlineDate: new Date(value),
+        deadline_date: new Date(value),
       });
       break;
     case "minSalary":
       setJob({
         ...job,
-        minSalary: parseInt(value, 10),
+        min_salary: parseInt(value, 10),
       });
       break;
     case "maxSalary":
       setJob({
         ...job,
-        maxSalary: parseInt(value, 10),
+        max_salary: parseInt(value, 10),
       });
       break;
     default:
@@ -82,33 +82,19 @@ const jobItems: IJob = {
   title: job.title,
   company: job.company,
   location: job.location,
-  minSalary: job.minSalary,
-  maxSalary: job.maxSalary,
-  companyLogo: job.companyLogo,
-  jobDescription: job.jobDescription,
-  jobType: job.jobType,
-  deadlineDate: job.deadlineDate,
+  min_salary: job.min_salary,
+  max_salary: job.max_salary,
+  company_logo: job.company_logo,
+  job_description: job.job_description,
+  job_type: job.job_type,
+  deadline_date: job.deadline_date,
   responsibilities: job.responsibilities,
   qualifications: job.qualifications,
   skills: job.skills,
   tags: job.tags,
 };
   mutate(jobItems);
-  setJob({
-    title: "",
-    company: "",
-    location: "",
-    minSalary: 0,
-    maxSalary: 0,
-    companyLogo: "",
-    jobDescription: "",
-    jobType: "",
-    deadlineDate: new Date(),
-    responsibilities: "",
-    qualifications: "",
-    skills: "",
-    tags: "",
-  });
+ 
 };
 
 

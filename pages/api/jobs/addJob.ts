@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 import prisma from "../../../lib/prismadb"
+import { User } from '@prisma/client';
 
 
 
@@ -46,8 +47,9 @@ export default async function handler(
             },
           }); 
           
-      
+
            res.status(200).json(result); // send a success response back to the client
+           console.log(result)
          } catch (error) {
            console.log(error);
            res.status(500).json({ error: "Internal server error" }); // send an error response back to the client
