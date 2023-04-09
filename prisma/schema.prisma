@@ -74,6 +74,7 @@ model Job {
   deadline_date    DateTime
   responsibilities String
   qualifications   String
+  slug            String   @unique
   tags             Tag[]
   skills           Skill[]
   applicants       Applicant[]

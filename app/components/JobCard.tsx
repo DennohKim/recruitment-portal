@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IJob } from "./PostJobModal";
+import { JobCardType } from "./Jobs";
 
-function JobCard({ jobs }: { jobs: IJob[] }) {
+function JobCard({ jobs }: { jobs: JobCardType[] }) {
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 ">
       {jobs.map((job) => (

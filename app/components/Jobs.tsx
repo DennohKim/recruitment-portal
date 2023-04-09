@@ -1,8 +1,18 @@
 import prisma from "../../lib/prismadb";
 import JobCard from "./JobCard";
-import { IJob } from "./PostJobModal";
 
-const fetchJob = async (): Promise<IJob[]> => {
+export interface JobCardType {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  min_salary: number;
+  max_salary: number;
+  company_logo: string;
+  tags: string[];
+}
+
+const fetchJob = async (): Promise<JobCardType[]> => {
   const jobs = await prisma.job.findMany({
     select: {
       id: true,
