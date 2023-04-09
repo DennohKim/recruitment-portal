@@ -67,8 +67,8 @@ model Job {
   company          String
   company_logo     String
   location         String
-  min_salary       Int?
-  max_salary       Int?
+  min_salary       Int
+  max_salary       Int
   job_description  String
   job_type         String
   deadline_date    DateTime

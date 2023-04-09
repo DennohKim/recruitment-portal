@@ -1,15 +1,16 @@
+import { Tag } from "@prisma/client";
 import prisma from "../../lib/prismadb";
 import JobCard from "./JobCard";
 
 export interface JobCardType {
-  id: number;
+  id: string;
   title: string;
   company: string;
   location: string;
-  min_salary: number;
-  max_salary: number;
+  min_salary: number | null;
+  max_salary: number | null;
   company_logo: string;
-  tags: string[];
+  tags: Tag[];
 }
 
 const fetchJob = async (): Promise<JobCardType[]> => {
